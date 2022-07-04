@@ -52,9 +52,11 @@ const Dashboard = () => {
     };
     useEffect(() => {
         if (!news.length) {
-            axios
-                .get('https://news.bitcoin.com/wp-content/weekly_popular_posts.json')
-                .then(({ data }) => {
+            fetch('https://news.bitcoin.com/wp-content/weekly_popular_posts.json', {
+                mode: 'no-cors'
+            })
+                .then(async (response) => {
+                    const data = await response.json();
                     dispatch(newsAction(data ?? []));
                 })
                 .catch((e) => {

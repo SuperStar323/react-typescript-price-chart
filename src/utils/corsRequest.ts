@@ -12,6 +12,8 @@ export const corsRequest = (options: any, callback: any) => {
             callback(data ?? []);
         })
         .catch(() => {
+            alert('Please request demo for cors proxy');
+            window.open('https://cors-anywhere.herokuapp.com/corsdemo', '_blank');
             callback([]);
         });
 };

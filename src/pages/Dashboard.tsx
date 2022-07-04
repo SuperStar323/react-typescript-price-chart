@@ -120,7 +120,7 @@ const Dashboard = () => {
                         href: 'https://news.bitcoin.com/el-salvador-buys-80-more-bitcoin-as-btc-fell-below-19k-president-insists-bitcoin-is-the-future/?utm_source=BitcoincomWallet&utm_medium=Discovery&utm_campaign=News'
                     }
                 ];
-                dispatch(newsAction(fakeNews));
+                dispatch(newsAction(fakeNews ?? []));
             });
     }, []);
 
